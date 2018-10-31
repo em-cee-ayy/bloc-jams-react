@@ -44,6 +44,24 @@ handleSongClick(song) {
 }
 }
 
+togglePlay(song, index) {
+  if (this.state.isMouseInside === index) {
+    return (
+      <span className="ion-md-play-circle"></span>
+    );
+  } else if ( this.state.currentSong === song && this.state.isPlaying ) {
+      return (
+        <span className="ion-md-pause"></span>
+      );
+  } else if ( this.state.currentSong === song && !this.state.isPlaying) {
+      return (
+        <span className="ion-md-play-circle"></span>
+      );
+  } else {
+    return(index + 1);
+  }
+}
+
   render() {
     return (
       <section className="album">
@@ -62,7 +80,7 @@ handleSongClick(song) {
           <col id="song-duration-column" />
         </colgroup>
         <tbody>
-        {this.state.album.songs.map((song, index) => <tr className="song" key={index} onClick={() => this.handleSongClick(song)} > <td>{songs.title}</td> <td>{songs.duration}</td> {index+1} </tr>
+        {this.state.album.songs.map((song, index) => <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave(index)} > <td>{songs.title}</td> <td>{songs.duration}</td> {index+1} </tr>
         )}
         </tbody>
         </table>
