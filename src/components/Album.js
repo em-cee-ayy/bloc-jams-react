@@ -89,6 +89,20 @@ handleTimeChange(e) {
   this.setState({ currentTime: newTime });
 }
 
+handleVolumeChange(e) {
+  const newVolume = e.target.value;
+  this.audioElement.volume = newVolume;
+  this.setState({ volume: newVolume })
+}
+
+formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time - minutes * 60);
+  return (
+    String("00000" + minutes).slice(-2)+":"+String("00000" + seconds).slice(-2) || "-:--"
+  );
+}
+
 togglePlay(song, index) {
   if (this.state.isMouseInside === index) {
     return (
@@ -125,7 +139,10 @@ togglePlay(song, index) {
           <col id="song-duration-column" />
         </colgroup>
         <tbody>
-        {this.state.album.songs.map((songs, index) => <tr className="song" key={index} onClick={() => this.handleSongClick(songs)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave(index)} > <td>{songs.title}</td> <td>{songs.duration}</td> {index+1} </tr>
+        {this.state.album.songs.map((songs, index) => <tr className="song" key={index} onClick={() => this.handleSongClick(songs)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave(index)} >
+        <td>{songs.title}</td>
+        <td>{this.formatTime(songs.duration)}</td>
+        {index+1} </tr>
         )}
         </tbody>
         </table>
@@ -138,6 +155,8 @@ togglePlay(song, index) {
         handlePrevClick={() => this.handlePrevClick()}
         handleNextClick={() => this.handleNextClick()}
         handleTimeChange={(e) => this.handleTimeChange(e)}
+        handleVolumeChange={(e) => this.handleVolumeChange(e)}
+        formatTime={(time) => this.formatTime(time)}
         />
         </section>
     );
