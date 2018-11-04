@@ -1,49 +1,327 @@
-.App {
-  text-align: center;
+.album {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-right: 50px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-image: url('https://wallpapercave.com/wp/GoYhcga.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1050px;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+
+.buttons .ion-md-play {
+  cursor: pointer;
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.buttons .ion-md-pause {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#column-1 {
+  position: relative;
+  width: 50%;
+  padding-right: 100px;
+  float: left;
+  height: 100%;
+}
+
+#column-2 {
+  position: relative;
+  padding-top: 20px;
+}
+
+#album-info {
+  postion: absolute;
+  width: 80%;
+}
+
+#album-cover-art {
+ width: 100%;
+ padding-bottom: 30px;
+ opacity: 0.8;
+}
+
+.album-details {
+  padding-left: 18px;
+  color: white;
+  width: 100%;
+}
+
+.artist {
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: pink;
+  font-size: 36px;
+}
+
+#album-title {
+  font-size: 16px;
+  letter-spacing: .14em;
+  color: #efefef;
+}
+
+.song-title:hover {
+  cursor: pointer;
+  color: pink;
+}
+
+#release-info {
+  letter-spacing: .13em;
+  color: #efefef;
+}
+
+#song-list {
+  width: 50%;
+}
+
+tbody {
+  border-left: 2.5px solid #3f4656;
+  opacity: .8;
+}
+
+tbody tr td {
+  color: white;
+  padding: 15px 0px 15px 50px;
+}
+
+
+.song-title {
+  padding-right: 10%;
+  font-size: 17px;
+  letter-spacing: .16em;
+}
+
+.song-duration {
+  letter-spacing: .04em;
+}
+
+.musicbar {
+  width: 100%;
+}
+
+/*edit here*/
+
+.library {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-right: 50px;
+  padding-top: 20%;
+  min-height: 1050px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-color: rgb(212, 211, 211);
+  background-size: cover;
+  font-family: 'Gloria Hallelujah';
+}
+
+#album-details {
+  text-decoration: none;
+  font-size: 25px;
+  text-align: left;
+  color: orange;
+  letter-spacing: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Gloria Hallelujah';
+}
+
+.library-detail-wrapper {
+  position: relative;
+  font-family: 'Gloria Hallelujah';
+}
+
+.library-title {
+  font-size: 30px;
+  color: DeepPink;
+  position: relative;
+  font-family: 'Gloria Hallelujah';
+}
+
+.library-artist {
+  font-size: 20px;
+  color: blue;
+  font-family: 'Gloria Hallelujah';
+}
+
+.library-length {
+  font-size: 15px;
+  font-family: 'Gloria Hallelujah';
+}
+
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  transform: scale(1, 1);
+  box-shadow: 8px 8px 16px #000000;
+}
+
+.player-bar {
+  width: 51%;
+  float: left;
+  text-align: right;
+  color: white;
+
+}
+
+.player-bar ul li{
+  list-style: none;
+}
+
+.sidevolume {
+  padding-right: 70px;
+  padding-top: 43px;
+  text-align: right;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidevolume input {
+  width: 10%;
+  cursor: pointer;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 750px auto 750px;
-  grid-template-rows: repeat(1, 150px);
-  grid-gap: 1em;
+.slider {
+  margin-right: -23%;
+}
+
+.slider input {
+  width: 50%;
+  cursor: pointer;
 }
 
 
-
-.title {
-  font-family: Futura, 'sans-serif';
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  text-decoration: underline;
+#previous {
+  font-size: 30px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#previous:hover {
+  color: pink;
+}
+#next {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#next:hover {
+  color: pink;
+}
+
+.ion-md-play {
+  font-size: 45px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+.ion-md-play:hover {
+  color: pink;
+}
+
+.ion-md-pause {
+  font-size: 45px;
+  position: relative;
+  top: 5px;
+  left: -1px;
+  cursor: pointer;
+}
+
+.ion-md-pause:hover {
+  color: pink;
+}
+
+.ion-md-volume-high {
+  font-size: 20px;
+}
+
+.ion-md-add-circle-outline {
+  text-align: center;
+  width: 20%;
+  position: absolute;
+  top: 50px;
+  font-size: 18px;
+  letter-spacing: .12em;
+}
+
+.jumbotron {
+  background-image: url('https://wallpapercave.com/wp/wp3144325.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  letter-spacing: .7px;
+  min-height: 1050px;
+}
+
+.jumbotron .container {
+  margin-left: 10%;
+}
+
+
+.link {
+  color: #FFF;
+  padding: 30px;
+  letter-spacing: .2em;
+}
+
+
+#navbarText li a{
+  color: white;
+  letter-spacing: .15em;
+  font-weight: bold;
+  padding-right: 30px;
+}
+
+#navbarText li a:hover {
+  color: pink;
+}
+
+.navbar {
+  color: white;
+  opacity: .8;
+  padding-left: 40px;
+}
+
+.navbar-brand {
+   padding: 0 45px;
+   height: 80px;
+   line-height: 80px;
+   font-size: 27px;
+   padding-left: 20px;
+}
+
+
+.navbar .navbar-text {
+  color: white;
+  margin-right: 80px;
+}
+
+.navbar-text {
+  border-left: 2.5px solid #FFF;
+  padding-left: 30px;
+  letter-spacing: 0.13em;
+}
+
+
+#song-list tbody td:hover .buttons {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#song-list tbody td .buttons {
+  display: none;
+}
+
+#song-list tbody td:hover .index {
+  display: none;
+
 }
